@@ -4,6 +4,7 @@
   "description": "AsterovLabs Sovereign Search — 100% in-house sovereign web search, deep crawler, markdown distiller, and local SQLite knowledge vault.",
   "type": "module",
   "main": "index.js",
+  "homepage": "https://asterovlabs.com/sovereign-search",
   "bin": {
     "sovereign-search-mcp": "./index.js",
     "asterovlabs-sovereign-search": "./index.js"
