@@ -1,0 +1,42 @@
+{
+  "name": "@asterov/sovereign-search-mcp",
+  "version": "1.0.0",
+  "description": "AsterovLabs Sovereign Search — 100% in-house sovereign web search, deep crawler, markdown distiller, and local SQLite knowledge vault.",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "sovereign-search-mcp": "./index.js",
+    "asterovlabs-sovereign-search": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AsterovLabs/sovereign-search.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "search",
+    "crawler",
+    "searxng",
+    "bm25",
+    "sqlite",
+    "fts5",
+    "markdown-distiller",
+    "agentic-ai",
+    "sovereign"
+  ],
+  "author": "Samuel Dziekan (AsterovLabs)",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@mozilla/readability": "^0.5.0",
+    "cheerio": "^1.0.0",
+    "jsdom": "^26.0.0",
+    "playwright": "^1.63.0",
+    "turndown": "^7.2.0"
+  }
+}

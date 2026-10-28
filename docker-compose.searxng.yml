@@ -1,0 +1,32 @@
+# =============================================================================
+# Sovereign Search — Local SearXNG Standalone Docker Stack
+# =============================================================================
+# Run with: docker compose -f docker-compose.searxng.yml up -d
+# Host port 8888 maps to SearXNG container internal port 8080
+# =============================================================================
+version: '3.8'
+
+services:
+  sovereign-searxng:
+    image: searxng/searxng:latest
+    container_name: sovereign-searxng
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8888:8080"
+    environment:
+      - SEARXNG_BASE_URL=http://127.0.0.1:8888/
+      - SEARXNG_SECRET=${SEARXNG_SECRET:-sovereign_search_default_secret_key_change_in_production}
+      - SEARXNG_SETTINGS_PATH=/etc/searxng/settings.yml
+    volumes:
+      - ./searxng-settings.yml:/etc/searxng/settings.yml:ro
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "2"
